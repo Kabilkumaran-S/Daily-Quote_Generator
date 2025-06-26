@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Quote Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation as buttons -->
+<nav class="top-nav">
+  <button onclick="location.href='view-quotes.html'">View Quotes</button>
+  <button onclick="location.href='about.html'">About</button>
+</nav>
+
+<!-- Daily Quotes Section -->
+<section id="daily-quotes" class="container">
+  <div class="container">
+    <h1>Daily Quote</h1>
+    <div class="quote-box">
+      <p class="quote" id="quote">Loading...</p>
+      <p class="author" id="author"></p>
+      <button onclick="getQuote()">New Quote</button>
+    </div>
+  </div>
+  </section>
+
+
+
+<script>
+  const quotes = [
+    { text: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
+    { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+    { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+    { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+    { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" }
+  ];
+
+  function getQuote() {
+    let randomIndex = Math.floor(Math.random() * quotes.length);
+    let quote = quotes[randomIndex];
+    document.getElementById("quote").style.opacity = 0;
+
+    setTimeout(() => {
+      document.getElementById("quote").innerText = `"${quote.text}"`;
+      document.getElementById("author").innerText = `— ${quote.author}`;
+      document.getElementById("quote").style.opacity = 1;
+    }, 500);
+  }
+
+  function showAllQuotes() {
+    let allQuotesText = "All Quotes:\n\n";
+    quotes.forEach(quote => {
+      allQuotesText += `"${quote.text}"\n— ${quote.author}\n\n`;
+    });
+    alert(allQuotesText);
+  }
+
+  window.onload = getQuote;
+</script>
+
+
+<footer>
+  <p>© 2025 Daily Quote Generator</p><p>developed By KabilKumaran S</p>
+</footer>
+
+</body>
+</html>
