@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Quotes - Daily Quote Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <button onclick="location.href='index.html'">Home</button>
+    <button onclick="location.href='about.html'">About</button>
+    <button onclick="location.href='view-quotes.html'">View Quotes</button>
+  </nav>
+
+  <section class="container">
+    <h2>All Quotes</h2>
+    <div id="all-quotes-list">
+      <!-- Quotes will be loaded here by the script -->
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Daily Quote Generator</p>
+  </footer>
+
+  <script>
+    const quotes = [
+      { text: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
+      { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+      { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+      { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+      { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" }
+    ];
+
+    function displayAllQuotes() {
+      const quotesListContainer = document.getElementById("all-quotes-list");
+
+      quotes.forEach(quote => {
+        const quoteElement = document.createElement("p");
+        quoteElement.classList.add("quote");
+        quoteElement.innerText = `"${quote.text}"`;
+
+        const authorElement = document.createElement("p");
+        authorElement.classList.add("author");
+        authorElement.innerText = `— ${quote.author}`;
+
+        quotesListContainer.appendChild(quoteElement);
+        quotesListContainer.appendChild(authorElement);
+      });
+    }
+
+    window.onload = displayAllQuotes;
+  </script>
+
+</body>
+</html>
