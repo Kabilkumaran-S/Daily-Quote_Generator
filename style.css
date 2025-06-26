@@ -4,12 +4,18 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-          background-image: url('bg.jpg');
           background-size: cover;
           background-repeat: no-repeat;
     padding: 0;
     background-color: #f4f4f4;
 }
+border: 1px solid #ddd;
+border-radius: 4px;
+padding: 5px;
+width; 150px;
+}
+
+<img src="bg.jpg" alt="bg">
   
   .top-nav {
     background-color: #333;
